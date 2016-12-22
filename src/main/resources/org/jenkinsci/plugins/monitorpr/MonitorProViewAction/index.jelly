@@ -5,20 +5,26 @@
 <html>
 
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
     <title>MonitorPro</title>    
+ 	<link rel="icon" type="image/x-icon" href="${rootURL}/plugin/monitor-pro/favicon.ico"/>  	
+    <link rel="stylesheet" type="text/css" href="${rootURL}/plugin/monitor-pro/assets/styles/industrial.css"/>
   </head>
 
-  <body>
+  <body class="build-monitor dashboard industrial">
     	
     <div id="monitorPro-container">
-    	<app-root>Loading...</app-root>
+    	<app-root urlJenkins="${app.rootUrl}">Loading...</app-root>
     </div>
     
     <!-- Scripts SPA application -->
     <script type="text/javascript" src="${rootURL}/plugin/monitor-pro/inline.bundle.js"></script>
 	<script type="text/javascript" src="${rootURL}/plugin/monitor-pro/styles.bundle.js"></script>
 	<script type="text/javascript" src="${rootURL}/plugin/monitor-pro/main.bundle.js"></script>
+	<script type="text/javascript">
+	console.log("Máquina: ${app.rootUrl}");
+	console.log("Nomnre: ${it.displayName}");
+	</script>
 	
   </body>
 

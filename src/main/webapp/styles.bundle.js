@@ -1,15 +1,15 @@
 webpackJsonp([1,2],{
 
-/***/ 392:
+/***/ 393:
 /***/ function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(644);
+var content = __webpack_require__(648);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(926)(content, {});
+var update = __webpack_require__(932)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -27,22 +27,22 @@ if(false) {
 
 /***/ },
 
-/***/ 644:
+/***/ 648:
 /***/ function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(645)();
+exports = module.exports = __webpack_require__(649)();
 // imports
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n", ""]);
+exports.push([module.i, "body {\n  font-size: 100%;\n  font-family: 'Open sans', Verdana, Helvetica, sans serif;\n  margin: 0;\n}\n.build-monitor.dashboard {\n  font-size: 0.6875em;\n}\n.build-monitor header h1 {\n  font-size: 3em;\n  letter-spacing: 0.1em;\n}\n.build-monitor nav label {\n  font-size: 1em;\n}\n.build-monitor .main {\n  font-size: 24px;\n}\n.modal-header h1 {\n  font-size: 2.5em;\n}\n.modal-body p {\n  font-size: 1.2em;\n}\n.modal textarea {\n  font-family: \"Consolas\", \"Menlo\", \"Courier\", monospace;\n}\nbody {\n  margin: 0;\n}\n.build-monitor.dashboard {\n  height: 100vh;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: -ms-flex;\n  display: -webkit-box;\n  display: flex;\n  -moz-flex-direction: column;\n  -ms-flex-direction: column;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  -moz-justify-content: space-between;\n  -ms-justify-content: space-between;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  margin: auto;\n}\n.build-monitor.dashboard > header {\n  height: 58px;\n  -ms-flex-negative: 0;\n      flex-shrink: 0;\n}\n.build-monitor.dashboard > .main {\n  display: block;\n  -moz-flex: 1 1 0px;\n  -ms-flex: 1 1 0px;\n  -webkit-box-flex: 1;\n          flex: 1 1 0px;\n  overflow-y: auto;\n  -webkit-overflow-scrolling: touch;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: -ms-flex;\n  display: -webkit-box;\n  display: flex;\n  -moz-flex-direction: column;\n  -ms-flex-direction: column;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  -moz-justify-content: space-between;\n  -ms-justify-content: space-between;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  padding: 0px 8px 4px 8px;\n}\n.build-monitor.dashboard > footer {\n  height: 24px;\n  -ms-flex-negative: 0;\n      flex-shrink: 0;\n}\n.build-monitor .main.empty {\n  -moz-justify-content: space-around;\n  -ms-justify-content: space-around;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  padding: 0 10%;\n  text-align: center;\n}\n.build-monitor .main.empty div.notice {\n  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);\n  border-radius: 10px;\n  background: rgba(0, 0, 0, 0.5);\n  padding: 2em;\n}\n.build-monitor .main.empty div.notice p {\n  margin: 0;\n  color: #ddd;\n}\n.build-monitor.dashboard #widgets {\n  -moz-flex: 1;\n  -ms-flex: 1;\n  -webkit-box-flex: 1;\n          flex: 1;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: -ms-flex;\n  display: -webkit-box;\n  display: flex;\n  -ms-flex-flow: row wrap;\n  flex-flow: row wrap;\n  -moz-justify-content: space-between;\n  -ms-justify-content: space-between;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  list-style-type: none;\n  margin: 4px 0 -4px -6px;\n  padding: 0;\n}\n.build-monitor.dashboard #widgets > li {\n  -moz-flex: 1;\n  -ms-flex: 1;\n  -webkit-box-flex: 1;\n          flex: 1;\n  overflow: visible;\n}\n.build-monitor.dashboard #widgets > li {\n  margin: 0 0 8px 8px;\n}\n.build-monitor.dashboard #widgets.columns-1 > li {\n  -moz-flex: 100%;\n  -ms-flex: 100%;\n  -webkit-box-flex: 100%;\n          flex: 100%;\n}\n.build-monitor.dashboard #widgets.columns-2 > li {\n  -moz-flex: 49%;\n  -ms-flex: 49%;\n  -webkit-box-flex: 49%;\n          flex: 49%;\n}\n.build-monitor.dashboard #widgets.columns-3 > li {\n  -moz-flex: 32.333333333333336%;\n  -ms-flex: 32.333333333333336%;\n  -webkit-box-flex: 32.333333333333336%;\n          flex: 32.333333333333336%;\n}\n.build-monitor.dashboard #widgets.columns-4 > li {\n  -moz-flex: 24%;\n  -ms-flex: 24%;\n  -webkit-box-flex: 24%;\n          flex: 24%;\n}\n.build-monitor.dashboard #widgets.columns-5 > li {\n  -moz-flex: 19%;\n  -ms-flex: 19%;\n  -webkit-box-flex: 19%;\n          flex: 19%;\n}\n.build-monitor.dashboard #widgets.columns-6 > li {\n  -moz-flex: 15.666666666666666%;\n  -ms-flex: 15.666666666666666%;\n  -webkit-box-flex: 15.666666666666666%;\n          flex: 15.666666666666666%;\n}\n.build-monitor.dashboard #widgets.columns-7 > li {\n  -moz-flex: 13.285714285714286%;\n  -ms-flex: 13.285714285714286%;\n  -webkit-box-flex: 13.285714285714286%;\n          flex: 13.285714285714286%;\n}\n.build-monitor.dashboard #widgets.columns-8 > li {\n  -moz-flex: 11.5%;\n  -ms-flex: 11.5%;\n  -webkit-box-flex: 11.5%;\n          flex: 11.5%;\n}\n.build-monitor.dashboard > footer {\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: -ms-flex;\n  display: -webkit-box;\n  display: flex;\n  -moz-flex-direction: row;\n  -ms-flex-direction: row;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-direction: row;\n  -moz-justify-content: space-between;\n  -ms-justify-content: space-between;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  padding: 0 4px;\n  color: #ddd;\n}\n.build-monitor.dashboard > footer .column {\n  -moz-flex: 1;\n  -ms-flex: 1;\n  -webkit-box-flex: 1;\n          flex: 1;\n}\n.build-monitor.dashboard > footer .column.connectivity .notifier {\n  display: inline-block;\n  margin: 2px 2px 0 6px;\n  padding: 2px 10px;\n  border-radius: 10px;\n  background: #ffcf85;\n  color: #393939;\n}\n.build-monitor.dashboard > footer .column.version-info {\n  margin: 2px 4px 0 0;\n  text-align: right;\n}\n.modal {\n  font-size: 1em;\n}\n.build-monitor.colour-blind-mode .progress {\n  opacity: 0.60;\n}\n.build-monitor .project.unknown > .progress {\n  background-color: #9d9d9d;\n}\n.build-monitor .project.successful > .progress {\n  background-color: green;\n}\n.build-monitor .project.unstable > .progress {\n  background-color: #f9aa1c;\n}\n.build-monitor .project.failing > .progress {\n  background-color: firebrick;\n}\n.build-monitor .project.aborted > .progress {\n  background-color: #909090;\n}\n.build-monitor:not(.reduce-motion-mode) .project.unknown > .progress.updated {\n  -webkit-animation: forUnknown 2.25s 2 alternate;\n  animation: forUnknown 2.25s 2 alternate;\n}\n.build-monitor:not(.reduce-motion-mode) .project.successful > .progress.updated {\n  -webkit-animation: forSuccessful 2.25s 2 alternate;\n  animation: forSuccessful 2.25s 2 alternate;\n}\n.build-monitor:not(.reduce-motion-mode) .project.unstable > .progress.updated {\n  -webkit-animation: forUnstable 2.25s 2 alternate;\n  animation: forUnstable 2.25s 2 alternate;\n}\n.build-monitor:not(.reduce-motion-mode) .project.failing > .progress.updated {\n  -webkit-animation: forFailing 2.25s 2 alternate;\n  animation: forFailing 2.25s 2 alternate;\n}\n.build-monitor:not(.reduce-motion-mode) .project.aborted > .progress.updated {\n  -webkit-animation: forAborted 2.25s 2 alternate;\n  animation: forAborted 2.25s 2 alternate;\n}\n@-webkit-keyframes forUnknown {\n  0% {\n    background-color: #9d9d9d;\n  }\n  100% {\n    background-color: grey;\n  }\n}\n@keyframes forUnknown {\n  0% {\n    background-color: #9d9d9d;\n  }\n  100% {\n    background-color: grey;\n  }\n}\n@-webkit-keyframes forSuccessful {\n  0% {\n    background-color: green;\n  }\n  100% {\n    background-color: limegreen;\n  }\n}\n@keyframes forSuccessful {\n  0% {\n    background-color: green;\n  }\n  100% {\n    background-color: limegreen;\n  }\n}\n@-webkit-keyframes forUnstable {\n  0% {\n    background-color: #f9aa1c;\n  }\n  100% {\n    background-color: #ffc500;\n  }\n}\n@keyframes forUnstable {\n  0% {\n    background-color: #f9aa1c;\n  }\n  100% {\n    background-color: #ffc500;\n  }\n}\n@-webkit-keyframes forFailing {\n  0% {\n    background-color: firebrick;\n  }\n  100% {\n    background-color: red;\n  }\n}\n@keyframes forFailing {\n  0% {\n    background-color: firebrick;\n  }\n  100% {\n    background-color: red;\n  }\n}\n@-webkit-keyframes forAborted {\n  0% {\n    background-color: #909090;\n  }\n  100% {\n    background-color: #a9a9a9;\n  }\n}\n@keyframes forAborted {\n  0% {\n    background-color: #909090;\n  }\n  100% {\n    background-color: #a9a9a9;\n  }\n}\n.build-monitor .widget.basic.project header h2 {\n  font-size: 2.5em;\n}\n.build-monitor .widget.basic.project .slots .slot {\n  font-size: 1.5em;\n  font-weight: bold;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  overflow: hidden;\n}\n.build-monitor .widget.basic.project {\n  -moz-flex: 1 1 auto;\n  -ms-flex: 1 1 auto;\n  -webkit-box-flex: 1;\n          flex: 1 1 auto;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: -ms-flex;\n  display: -webkit-box;\n  display: flex;\n  -moz-flex-direction: column;\n  -ms-flex-direction: column;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  -moz-justify-content: flex-end;\n  -ms-justify-content: flex-end;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.build-monitor .widget.basic.project header {\n  -moz-flex: 3 2 auto;\n  -ms-flex: 3 2 auto;\n  -webkit-box-flex: 3;\n          flex: 3 2 auto;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: -ms-flex;\n  display: -webkit-box;\n  display: flex;\n  -moz-flex-direction: column;\n  -ms-flex-direction: column;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  -moz-justify-content: flex-end;\n  -ms-justify-content: flex-end;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.build-monitor .widget.basic.project .slots {\n  -moz-flex: 2 3 auto;\n  -ms-flex: 2 3 auto;\n  -webkit-box-flex: 2;\n          flex: 2 3 auto;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: -ms-flex;\n  display: -webkit-box;\n  display: flex;\n  -moz-flex-direction: row;\n  -ms-flex-direction: row;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n          flex-direction: row;\n}\n.build-monitor .widget.basic.project .slots .slot {\n  -moz-flex: 1;\n  -ms-flex: 1;\n  -webkit-box-flex: 1;\n          flex: 1;\n  display: -moz-flex;\n  display: -ms-flexbox;\n  display: -ms-flex;\n  display: -webkit-box;\n  display: flex;\n  -moz-flex-direction: column;\n  -ms-flex-direction: column;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n          flex-direction: column;\n  -moz-justify-content: flex-end;\n  -ms-justify-content: flex-end;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.build-monitor .widget.basic.project {\n  position: relative;\n  border-radius: 10px;\n  overflow-y: hidden;\n  min-height: 0px;\n}\n.build-monitor .widget.basic.project header {\n  position: relative;\n  margin: 8px 8px 0 8px;\n  overflow: hidden;\n}\n.build-monitor .widget.basic.project header ul.details {\n  margin: 0.25em 0 0 0;\n  padding: 0;\n  list-style-type: none;\n  text-align: center;\n}\n.build-monitor .widget.basic.project header ul.details li {\n  margin: 0 0 0.25em 0;\n}\n.build-monitor .widget.basic.project header .build-failure-analyzer-plugin ul.identified-failures {\n  list-style-type: none;\n  display: inline-block;\n  margin: 0;\n  padding: 0;\n}\n.build-monitor .widget.basic.project header .build-failure-analyzer-plugin ul.identified-failures li {\n  display: inline-block;\n  margin-right: 0.5em;\n}\n.build-monitor .widget.basic.project header .build-failure-analyzer-plugin ul.identified-failures li:after {\n  content: \",\";\n}\n.build-monitor .widget.basic.project header .build-failure-analyzer-plugin ul.identified-failures li:last-child:after {\n  content: \"\";\n}\n.build-monitor .widget.basic.project .slots .slot-1 {\n  text-align: left;\n  padding: 0 0 4px 8px;\n}\n.build-monitor .widget.basic.project .slots .slot-2 {\n  text-align: right;\n  padding: 0 8px 4px 0;\n}\n.build-monitor .widget.basic.project > .progress {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 0%;\n  height: 100%;\n  text-align: right;\n  overflow: hidden;\n}\n.build-monitor .widget.basic.project > .progress .value {\n  display: none;\n}\n.build-monitor .widget.basic.project .slot {\n  opacity: 0.3;\n}\n.build-monitor .widget.basic.project.running .slot {\n  opacity: 0.5;\n}\n.build-monitor .widget.basic.project {\n  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);\n}\n.build-monitor .widget.basic.project > .progress {\n  border-radius: 10px;\n}\n.rzslider span.rz-bubble {\n  color: #fff;\n}\n.rzslider span.rz-bubble.rz-limit {\n  color: #ccc;\n}\n.rzslider span.rz-pointer {\n  background-color: #f5f5f5;\n}\n.rzslider span.rz-pointer:after {\n  background-color: grey;\n}\n.rzslider span.rz-pointer:hover:after {\n  background-color: darkgrey;\n}\n.rzslider span.rz-pointer.rz-active:after {\n  background-color: black;\n}\n", ""]);
 
 // exports
 
 
 /***/ },
 
-/***/ 645:
+/***/ 649:
 /***/ function(module, exports) {
 
 /*
@@ -99,7 +99,7 @@ module.exports = function() {
 
 /***/ },
 
-/***/ 926:
+/***/ 932:
 /***/ function(module, exports) {
 
 /*
@@ -352,13 +352,13 @@ function updateLink(linkElement, obj) {
 
 /***/ },
 
-/***/ 929:
+/***/ 935:
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(392);
+module.exports = __webpack_require__(393);
 
 
 /***/ }
 
-},[929]);
+},[935]);
 //# sourceMappingURL=styles.bundle.map
