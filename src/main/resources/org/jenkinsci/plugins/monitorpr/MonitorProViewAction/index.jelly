@@ -21,10 +21,6 @@
     <script type="text/javascript" src="${rootURL}/plugin/monitor-pro/inline.bundle.js"></script>
 	<script type="text/javascript" src="${rootURL}/plugin/monitor-pro/styles.bundle.js"></script>
 	<script type="text/javascript" src="${rootURL}/plugin/monitor-pro/main.bundle.js"></script>
-	<script type="text/javascript">
-	console.log("Máquina: ${app.rootUrl}");
-	console.log("Nomnre: ${it.displayName}");
-	</script>
 	
   </body>
 

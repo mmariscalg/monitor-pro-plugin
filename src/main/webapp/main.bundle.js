@@ -27573,9 +27573,6 @@ var JenkinsService = (function () {
     JenkinsService.prototype.extractDataJobs = function (response) {
         return response.json().jobs;
     };
-    JenkinsService.prototype.extractDataJob = function (response) {
-        return response.json();
-    };
     JenkinsService = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* Injectable */])(), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === 'function' && _a) || Object])
@@ -41143,7 +41140,6 @@ var AppComponent = (function () {
         this.title = 'Monitor Pro v0.1';
         this.urlJenkins = "http://localhost:8080/"; //by default
         this.urlJenkins = elm.nativeElement.getAttribute("urlJenkins");
-        console.log("Parámetro de entrada a la app:" + this.urlJenkins);
     }
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
@@ -55921,7 +55917,7 @@ var JobsBasicViewMenuConfig = (function () {
     };
     JobsBasicViewMenuConfig.prototype.onSubmit = function () {
         this.onSetPollingInterval.next(this.viewConfig.pollingIntervalInMin);
-        console.log("Se cambia el valor del polling: " + this.viewConfig.pollingIntervalInMin);
+        console.log("Change value of polling: " + this.viewConfig.pollingIntervalInMin);
     };
     __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Input */])(), 
@@ -56002,13 +55998,12 @@ var JobsBasicViewComponent = (function () {
         this.jenkinsService = jenkinsService;
         this.jobsModel = [];
         this.views = [];
-        this.titleOfViewDisplay = "No se ha seleccionado ninguna vista todavía.";
+        this.titleOfViewDisplay = "No views selected yet.";
     }
     /**
      * Initialize the component. Load the initial configuration
      */
     JobsBasicViewComponent.prototype.ngOnInit = function () {
-        console.log("URL JENKINS FROM JOBSBASICVIEW:" + this.urlJenkins);
         this.viewConfig = new __WEBPACK_IMPORTED_MODULE_2__jobsBasicViewConfig__["a" /* JobsBasicViewConfig */]();
     };
     JobsBasicViewComponent.prototype.initLoadJobsStatus = function (url) {
@@ -56031,7 +56026,7 @@ var JobsBasicViewComponent = (function () {
     JobsBasicViewComponent.prototype.getJobsStatus = function (urlFolderOfJobs) {
         var _this = this;
         this.jenkinsService.getJobsData(urlFolderOfJobs)
-            .subscribe(function (jobs) { return _this.createJobData(jobs); }, function (error) { return console.log("No hay jobs"); });
+            .subscribe(function (jobs) { return _this.createJobData(jobs); }, function (error) { return console.log("There aren't jobs."); });
     };
     /**
      * Builds and fills jobs object
@@ -56109,7 +56104,6 @@ var JobsBasicViewComponent = (function () {
 var JobsBasicViewConfig = (function () {
     function JobsBasicViewConfig() {
         this.classColumn = "columns-1";
-        this.pollingIntervalInMin = 5;
         this.pollingIntervalInMilSecond = 300000;
     }
     return JobsBasicViewConfig;
@@ -59179,19 +59173,19 @@ module.exports = "<h1>\n  {{title}}\n</h1>\n\n<jobsBasicView [urlJenkins]=\"urlJ
 /* 652 */
 /***/ function(module, exports) {
 
-module.exports = "<header>\r\n  <h2><a title=\"{{jobModel.name}}\" href=\"{{jobModel.urlJob}}\">{{jobModel.name}}</a> </h2>\r\n<!--h2><{{jobModel.name}} => {{jobModel.urlJob}} => {{jobModel.result}} => {{jobModel.displayLastExecNumber}} => {{jobModel.lastExecTime}} => {{jobModel.timestamp}}></h2-->\r\n</header>\r\n<div class=\"slots\">\r\n<h1><a href=\"{{jobModel.urlJobExecution}}\">{{jobModel.displayLastExecNumber}}</a></h1>\r\n\r\n</div>\r\n\r\n"
+module.exports = "<header>\r\n  <h2><a title=\"{{jobModel.name}}\" href=\"{{jobModel.urlJob}}\">{{jobModel.name}}</a> </h2>\r\n</header>\r\n<div class=\"slots\">\r\n<h1><a href=\"{{jobModel.urlJobExecution}}\">{{jobModel.displayLastExecNumber}}</a></h1>\r\n\r\n</div>\r\n\r\n"
 
 /***/ },
 /* 653 */
 /***/ function(module, exports) {
 
-module.exports = "  <nav id=\"menuLateral\">\r\n    <section [class.showSettings]=\"toggleSettings\">\r\n      <input id=\"settings-toggle\" type=\"checkbox\" class=\"settings\" [(ngModel)]=\"toggleSettings\"/>\r\n      <label for=\"settings-toggle\" title=\"Configure Build Monitor Settings\">Settings</label>\r\n\r\n      <ul>\r\n        <li class=\"settings-option\">\r\n          <label for=\"combViewSelction\">Selecciona vista:</label>\r\n          <select [(ngModel)]=\"jobsViewSelected\" class=\"form-control\" id=\"combViewSelction\" name=\"combViewSelction\" (ngModelChange)=\"loadViewSelected()\" >\r\n            <option *ngFor=\"let view of views\" [selected]=\"view.name == jobsViewSelected.name\" [disabled]=\"view.name == jobsViewSelected.name\" [ngValue]=\"view\">{{view.name}}</option>\r\n          </select>\r\n        </li>\r\n        <li class=\"settings-option\">\r\n          <label for=\"combNumColumns\">Número de columnas:</label>\r\n          <select [(ngModel)]=\"viewConfig.numColSelected\" class=\"form-control\" id=\"combNumColumns\" name=\"combNumColumns\" (change)=\"setColumnsLayout()\" >\r\n            <option *ngFor=\"let numColumn of viewConfig.combNumColumns\" [value]=\"numColumn\">{{numColumn}}</option>\r\n          </select>\r\n        </li>\r\n        <li class=\"settings-option\">\r\n          <form (ngSubmit)=\"onSubmit()\">\r\n            <label for=\"inputPollInterval\">Polling:</label>\r\n            <input type=\"number\" [(ngModel)]=\"viewConfig.pollingIntervalInMin\" id=\"inputPollInterval\" name=\"inputPollInterval\"  min=\"1\" max=\"1440\">\r\n            <input type=\"submit\">\r\n          </form>\r\n        </li>\r\n      </ul>\r\n    </section>\r\n  </nav>\r\n\r\n"
+module.exports = "  <nav id=\"menuLateral\">\r\n    <section [class.showSettings]=\"toggleSettings\">\r\n      <input id=\"settings-toggle\" type=\"checkbox\" class=\"settings\" [(ngModel)]=\"toggleSettings\"/>\r\n      <label for=\"settings-toggle\" title=\"Configure Build Monitor Settings\">Settings</label>\r\n\r\n      <ul>\r\n        <li class=\"settings-option\">\r\n          <label for=\"combViewSelction\">Views:</label>\r\n          <select [(ngModel)]=\"jobsViewSelected\" class=\"form-control\" id=\"combViewSelction\" name=\"combViewSelction\" (ngModelChange)=\"loadViewSelected()\" >\r\n            <option *ngFor=\"let view of views\" [selected]=\"view.name == jobsViewSelected.name\" [disabled]=\"view.name == jobsViewSelected.name\" [ngValue]=\"view\">{{view.name}}</option>\r\n          </select>\r\n        </li>\r\n        <li class=\"settings-option\">\r\n          <label for=\"combNumColumns\">Maximun number of columns:</label>\r\n          <select [(ngModel)]=\"viewConfig.numColSelected\" class=\"form-control\" id=\"combNumColumns\" name=\"combNumColumns\" (change)=\"setColumnsLayout()\" >\r\n            <option *ngFor=\"let numColumn of viewConfig.combNumColumns\" [value]=\"numColumn\">{{numColumn}}</option>\r\n          </select>\r\n        </li>\r\n        <li class=\"settings-option\">\r\n          <form (ngSubmit)=\"onSubmit()\">\r\n            <label for=\"inputPollInterval\">Refresh interval (in minutes):</label>\r\n            <input type=\"number\" [(ngModel)]=\"viewConfig.pollingIntervalInMin\" id=\"inputPollInterval\" name=\"inputPollInterval\"  min=\"1\" max=\"1440\">\r\n            <input type=\"submit\">\r\n          </form>\r\n        </li>\r\n      </ul>\r\n    </section>\r\n  </nav>\r\n\r\n"
 
 /***/ },
 /* 654 */
 /***/ function(module, exports) {
 
-module.exports = "<h2>Vista: {{titleOfViewDisplay}}</h2>\r\n<header>\r\n  <menu-config (onSelectedView)=\"loadViewSelected($event)\" (onSelectNumColumn)=\"setColumnsLayout($event)\" (onSetPollingInterval)=\"setPollingInterval($event)\" [urlJenkins]=\"urlJenkins\">Menú de Configuración</menu-config>\r\n</header>\r\n\r\n<div>\r\n  <!-- Jobs List -->\r\n  <ul id=\"widgets\" [class] = \"viewConfig.classColumn\">\r\n    <li *ngFor=\"let jobData of jobsModel\" [ngClass]=\"jobData.setClasses()\">\r\n      <job  [jobModel]=\"jobData\" ></job>\r\n    </li>\r\n  </ul>\r\n</div>\r\n"
+module.exports = "<h2>View: {{titleOfViewDisplay}}</h2>\r\n<header>\r\n  <menu-config (onSelectedView)=\"loadViewSelected($event)\" (onSelectNumColumn)=\"setColumnsLayout($event)\" (onSetPollingInterval)=\"setPollingInterval($event)\" [urlJenkins]=\"urlJenkins\">Menú de Configuración</menu-config>\r\n</header>\r\n\r\n<div>\r\n  <!-- Jobs List -->\r\n  <ul id=\"widgets\" [class] = \"viewConfig.classColumn\">\r\n    <li *ngFor=\"let jobData of jobsModel\" [ngClass]=\"jobData.setClasses()\">\r\n      <job  [jobModel]=\"jobData\" ></job>\r\n    </li>\r\n  </ul>\r\n</div>\r\n"
 
 /***/ },
 /* 655 */
