@@ -2,7 +2,7 @@
   Monitor Pro Plugin allow you view the jobs status for a selected view.
   Add a button at the main jenkins's screen.
 #Features
-  In this first version we will could do:
+  In this first version we can do:
   - View the jobs status of a view selected.
   - Select a view.
   - Config the grid maximun number of columns
