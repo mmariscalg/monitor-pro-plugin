@@ -1,15 +1,20 @@
 # Monitor Pro Plugin for Jenkins
   Monitor Pro Plugin adds a button at the main Jenkins's screen, that allows view the jobs status for a selected view.
-   
+    
 #Features
   In this first version, you can:
   - Select a view.
   - Config the grid maximun number of columns
   - Set polling interval in minutes
   
+  ![Features](doc/img2.png)
+  
 #Installation and use
 To know how install this plugin, click the next link https://wiki.jenkins-ci.org/display/JENKINS/Plugins#Plugins-Howtoinstallplugins.
+
 Once the plugin's installation has finished, go to the Jenkins main page. An icon has been added at bottom of the left menu. To access the monitor plugin clicks over it.
+ 
+  ![Monitor Pro Plugin for Jenkins](doc/img1.png)
 
 #Technology
   Monitor Pro Plugin is built on Angular2 and at this moment only uses the jenkins plugin technology to deploy it as a jenkins plugin.
