@@ -6,9 +6,11 @@ import hudson.model.Action;
 import hudson.model.Describable;
 import hudson.model.Api;
 import hudson.model.Descriptor;
+import hudson.util.HttpResponses;
 import jenkins.model.Jenkins;
 import net.sf.json.JSONObject;
 
+import org.kohsuke.stapler.HttpResponse;
 import org.kohsuke.stapler.StaplerRequest;
 import org.kohsuke.stapler.export.Exported;
 import org.kohsuke.stapler.export.ExportedBean;
@@ -27,6 +29,11 @@ public class MonitorProViewAction implements Action, Describable<MonitorProViewA
 	
 	public Api getApi() {
 		return new Api(this);
+	}
+	
+	public HttpResponse doProve(){
+		System.out.println("PRUEBA");
+		return HttpResponses.redirectTo("http://www.google.es");
 	}
 
 	/*
