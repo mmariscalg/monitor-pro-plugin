@@ -7,8 +7,8 @@
   <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
     <title>MonitorPro</title>    
- 	<link rel="icon" type="image/x-icon" href="${rootURL}/plugin/monitor-pro/favicon.ico"/>  	
-    <link rel="stylesheet" type="text/css" href="${rootURL}/plugin/monitor-pro/assets/styles/industrial.css"/>
+ 	<link rel="icon" type="image/x-icon" href="${app.rootUrl}plugin/monitor-pro/favicon.ico"/>  	
+    <link rel="stylesheet" type="text/css" href="${app.rootUrl}plugin/monitor-pro/assets/styles/industrial.css"/>
   </head>
 
   <body class="build-monitor dashboard industrial">
@@ -18,9 +18,10 @@
     </div>
     
     <!-- Scripts SPA application -->
-    <script type="text/javascript" src="${rootURL}/plugin/monitor-pro/inline.bundle.js"></script>
-	<script type="text/javascript" src="${rootURL}/plugin/monitor-pro/styles.bundle.js"></script>
-	<script type="text/javascript" src="${rootURL}/plugin/monitor-pro/main.bundle.js"></script>
+    <script type="text/javascript" src="${app.rootUrl}plugin/monitor-pro/inline.bundle.js"></script>
+	<script type="text/javascript" src="${app.rootUrl}plugin/monitor-pro/styles.bundle.js"></script>
+	<script type="text/javascript" src="${app.rootUrl}plugin/monitor-pro/vendor.bundle.js"></script>
+	<script type="text/javascript" src="${app.rootUrl}plugin/monitor-pro/main.bundle.js"></script>
 	
   </body>
 
