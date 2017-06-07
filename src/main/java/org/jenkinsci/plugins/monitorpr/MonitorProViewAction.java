@@ -25,7 +25,7 @@ public class MonitorProViewAction implements Action, Describable<MonitorProViewA
 
 	public final static String SHORT_NAME = "monitor-pro";
 	
-	public final static String DISPLAY_NAME = "MonitorPro";
+	public final static String DISPLAY_NAME = "Monitor Pro";
 	
 	public Api getApi() {
 		return new Api(this);
