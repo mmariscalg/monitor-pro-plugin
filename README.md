@@ -1,5 +1,5 @@
 # Monitor Pro Plugin for Jenkins
-  Monitor Pro Plugin is an plugin to monitoring the Jobs Executions, built as a SPA application. It provides to Jenkins interface of a button at the main screen. if the user clicks on it, Monitor Pro application will be open.
+  Monitor Pro Plugin is a plugin to monitoring the Jobs Executions, built as a SPA application. It provides to Jenkins interface of a button at the main screen. if the user clicks on it, Monitor Pro application will be open.
     
 # Features
   In this first version, you can:
