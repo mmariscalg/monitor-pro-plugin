@@ -27,6 +27,8 @@
          ~ hpi-plugin.version: The HPI Maven Plugin version used by the plugin..
          ~ stapler-plugin.version: The Stapler Maven plugin version required by the plugin.
     -->
+    <findbugs-maven-plugin.version>3.0.1</findbugs-maven-plugin.version>
+    <findbugs.failOnError>false</findbugs.failOnError>
   </properties>
 
   <name>Monitor Pro Plugin</name>
@@ -70,15 +72,45 @@
       <url>https://repo.jenkins-ci.org/public/</url>
     </pluginRepository>
   </pluginRepositories>
-  <!-- If you want to depend on other plugins:
+  <!-- If you want to depend on other plugins: -->
   <dependencies>
-    <dependency>
+    <!-- <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>credentials</artifactId>
       <version>1.9.4</version>
+    </dependency> -->
+    
+    <dependency>
+      <groupId>com.google.code.findbugs</groupId>
+      <artifactId>annotations</artifactId>
+      <version>3.0.0</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
-  -->
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>${findbugs-maven-plugin.version}</version>
+				<configuration>
+					<xmlOutput>true</xmlOutput>
+					<failOnError>${findbugs.failOnError}</failOnError>
+				</configuration>
+				<executions>
+					<execution>
+						<id>run-findbugs</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+ 
   
 
   
