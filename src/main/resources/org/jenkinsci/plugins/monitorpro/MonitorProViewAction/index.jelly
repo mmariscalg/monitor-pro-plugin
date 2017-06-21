@@ -20,7 +20,7 @@
     
     <!-- Scripts SPA application -->
     <script type="text/javascript" src="${app.rootUrl}plugin/monitor-pro/inline.bundle.js"></script>
-	<script type="text/javascript" src="${app.rootUrl}plugin/monitor-pro/styles.bundle.js"></script>
+	<script type="text/javascript" src="${app.rootUrl}plugin/monitor-pro/polyfills.bundle.js"></script>
 	<script type="text/javascript" src="${app.rootUrl}plugin/monitor-pro/vendor.bundle.js"></script>
 	<script type="text/javascript" src="${app.rootUrl}plugin/monitor-pro/main.bundle.js"></script>
 	
