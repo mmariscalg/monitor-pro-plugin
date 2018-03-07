@@ -7,7 +7,12 @@
   - Config the grid maximun number of columns.
   - Set polling interval in seconds.
   - If exist Jobs cofigured as a group in Jenkins, that jobs will be shows as a single element in the grid.
+    - Group by group name, whichever is the parametrized name of the group. 
   - Config the credentials and URL of the Jenkins Server that you want monitorize.
+  - Show which parameter caused the error.
+  - Group by parameter for easier viewing.
+  - Option to hide jobs finished successfully.
+  - Option to show as success the jobs run from a branch different to Master branch. 
   ![Features](doc/img.png)
   
 # Installation
