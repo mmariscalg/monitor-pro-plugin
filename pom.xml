@@ -50,6 +50,11 @@
       <name>Francisco R.</name>
       <email>frdbayon@gmail.com</email>
     </developer>
+    <developer>
+      <id>mmariscalg</id>
+      <name>Mario M.</name>
+      <email>mario100484@gmail.com</email>
+    </developer>
   </developers>
   
   <!-- Assuming you want to host on @jenkinsci:-->
