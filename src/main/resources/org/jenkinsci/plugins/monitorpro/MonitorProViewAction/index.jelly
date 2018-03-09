@@ -1,0 +1,30 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:x="jelly:xml">
+<st:contentType value="text/html;charset=UTF-8" />
+<x:doctype name="html" />
+<html>
+
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>MonitorPro</title>    
+ 	<link rel="icon" type="image/x-icon" href="${app.rootUrl}plugin/monitor-pro/favicon.ico"/>  	
+    <link rel="stylesheet" type="text/css" href="${app.rootUrl}plugin/monitor-pro/assets/styles/industrial.css"/>
+    <link rel="stylesheet" type="text/css" href="${app.rootUrl}plugin/monitor-pro/styles.bundle.css"/>
+  </head>
+
+  <body class="build-monitor dashboard industrial">
+    	
+    <div id="monitorPro-container">
+    	<app-root urlJenkins="${app.rootUrl}">Loading...</app-root>
+    </div>
+    
+    <!-- Scripts SPA application -->
+    <script type="text/javascript" src="${app.rootUrl}plugin/monitor-pro/inline.bundle.js"></script>
+	<script type="text/javascript" src="${app.rootUrl}plugin/monitor-pro/polyfills.bundle.js"></script>
+	<script type="text/javascript" src="${app.rootUrl}plugin/monitor-pro/vendor.bundle.js"></script>
+	<script type="text/javascript" src="${app.rootUrl}plugin/monitor-pro/main.bundle.js"></script>
+	
+  </body>
+
+</html>
+</j:jelly>
