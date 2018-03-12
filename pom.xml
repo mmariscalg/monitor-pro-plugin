@@ -11,7 +11,7 @@
   
   <groupId>org.jenkins-ci.plugins</groupId>
   <artifactId>monitor-pro</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.4-SNAPSHOT</version>
   <packaging>hpi</packaging>
 
   <properties>
@@ -45,6 +45,11 @@
 
   <!-- If you want this to appear on the wiki page:-->
   <developers>
+    <developer>
+      <id>frdiaz</id>
+      <name>Francisco R.</name>
+      <email>frdbayon@gmail.com</email>
+    </developer>
     <developer>
       <id>mmariscalg</id>
       <name>Mario Mariscal</name>
