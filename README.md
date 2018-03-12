@@ -16,7 +16,7 @@
   ![Features](doc/img.png)
   
 # Installation
-You can use this application as a plugin of Jenkins or integrated into any web application. Install application as a plugin there is no mistery, but if you want to use it into a web app, click on the link https://github.com/franciscoRdiaz/monitor-pro-spa to more information.
+You can use this application as a plugin of Jenkins or integrated into any web application. Install application as a plugin there is no mistery, but if you want to use it into a web app, click on the link https://github.com/mmariscalg/jenkins-test-failure-magnifier to more information.
 
 # Quick Start
   Once the plugin's installation has finished, go to the Jenkins main page. An icon has been added at bottom of the left menu. To access the monitor plugin you must click on it.
