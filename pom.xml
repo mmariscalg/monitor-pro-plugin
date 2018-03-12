@@ -11,7 +11,7 @@
   
   <groupId>org.jenkins-ci.plugins</groupId>
   <artifactId>monitor-pro</artifactId>
-  <version>1.0.5-SNAPSHOT</version>
+  <version>1.0.5</version>
   <packaging>hpi</packaging>
 
   <properties>
@@ -57,7 +57,7 @@
     <connection>scm:git:ssh://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/jenkinsci/${project.artifactId}-plugin.git</developerConnection>
     <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
-    <tag>monitor-pro-1.0.4</tag>
+    <tag>monitor-pro-1.0.5</tag>
   </scm>
    
   <repositories>
