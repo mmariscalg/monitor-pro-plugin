@@ -11,7 +11,7 @@
   
   <groupId>org.jenkins-ci.plugins</groupId>
   <artifactId>monitor-pro</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.4-SNAPSHOT</version>
   <packaging>hpi</packaging>
 
   <properties>
@@ -52,17 +52,17 @@
     </developer>
     <developer>
       <id>mmariscalg</id>
-      <name>Mario M.</name>
-      <email>mario100484@gmail.com</email>
+      <name>Mario Mariscal</name>
+      <email>mario10_4_84@hotmail.com</email>
     </developer>
   </developers>
   
   <!-- Assuming you want to host on @jenkinsci:-->
   <scm>
     <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
-    <developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection>
-    <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>    
-    <tag>HEAD</tag>
+    <developerConnection>scm:git:git@github.com://jenkinsci/${project.artifactId}-plugin.git</developerConnection>
+    <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
+    <tag>monitor-pro-1.0.4</tag>
   </scm>
    
   <repositories>
@@ -113,6 +113,13 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<additionalparam>-Xdoclint:none</additionalparam>
+				</configuration>
+			</plugin>
 		</plugins>
-	</build>  
+	</build>
 </project>
