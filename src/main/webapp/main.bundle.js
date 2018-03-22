@@ -20,12 +20,12 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 /***/ "../../../../../src/app/app.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(true);
 // imports
 
 
 // module
-exports.push([module.i, ".job {\r\n  margin: 10px 10px 10px 10px;\r\n}\r\n", ""]);
+exports.push([module.i, ".job {\r\n  margin: 10px 10px 10px 10px;\r\n}\r\n", "", {"version":3,"sources":["D:/U/jenkins-test-failure-magnifier/src/app/D:/U/jenkins-test-failure-magnifier/app.component.css"],"names":[],"mappings":"AAAA;EACE,4BAA4B;CAC7B","file":"app.component.css","sourcesContent":[".job {\r\n  margin: 10px 10px 10px 10px;\r\n}\r\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<header><h1>\r\n  {{title}}\r\n</h1>\r\n</header>\r\n\r\n<jobsBasicView [urlJenkins]=\"urlJenkins\"></jobsBasicView>\r\n"
+module.exports = "<header><h1>\r\n  {{title}}\r\n</h1>\r\n</header>\r\n<jobsBasicView [urlJenkins]=\"urlJenkins\"></jobsBasicView>\r\n"
 
 /***/ }),
 
@@ -965,7 +965,7 @@ var JobsBasicViewMenuConfig = (function () {
 /***/ "../../../../../src/app/jobs-basic-view/jobsBasicView.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>View: {{jobsViewSelected.name}}</h2>\r\n<header>\r\n  <menu-config (onSelectedView)=\"loadViewSelected($event)\" (onSelectNumColumn)=\"setColumnsLayout($event)\" (onSetPollingInterval)=\"setPollingInterval($event)\"  (onUnsuscribePrevious)=\"unsuscribePrevious($event)\" [urlJenkins]=\"urlJenkins\">Configuration Menu</menu-config>\r\n</header>\r\n\r\n<div>\r\n  <!-- Jobs List -->\r\n  <ul id=\"widgets\" [class] = \"viewConfig.classColumn\">\r\n    <li *ngFor=\"let jobData of jobsModel\" [ngClass]=\"jobData.getClasses()\">\r\n      <job  [jobModel]=\"jobData\"></job>\r\n    </li>\r\n  </ul>\r\n</div>\r\n"
+module.exports = "<h2>View: {{jobsViewSelected.name}}</h2>\r\n<h2>Group filter \r\n  <input type=\"text\" placeholder=\"Search for groups..\" [(ngModel)]='listFilter' />\r\n</h2>\r\n<h4>\r\n  Filtering by: {{listFilter}}\r\n</h4>\r\n<header>\r\n  <menu-config (onSelectedView)=\"loadViewSelected($event)\" (onSelectNumColumn)=\"setColumnsLayout($event)\" (onSetPollingInterval)=\"setPollingInterval($event)\"  (onUnsuscribePrevious)=\"unsuscribePrevious($event)\" [urlJenkins]=\"urlJenkins\">Configuration Menu</menu-config>\r\n</header>\r\n\r\n<div>\r\n  <!-- Jobs List -->\r\n  <ul id=\"widgets\" [class] = \"viewConfig.classColumn\">\r\n    <li *ngFor=\"let jobData of filteredJobsModel\" [ngClass]=\"jobData.getClasses()\">\r\n      <job  [jobModel]=\"jobData\"></job>\r\n    </li>\r\n  </ul>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1001,8 +1001,27 @@ var JobsBasicViewComponent = (function () {
     function JobsBasicViewComponent(jenkinsService) {
         this.jenkinsService = jenkinsService;
         this.jobsModel = [];
+        this.filteredJobsModel = [];
+        this._listFilter = '';
         this.jobsViewSelected = new __WEBPACK_IMPORTED_MODULE_4__jobsBasicView_model__["a" /* JobsBasicViewModel */](undefined, 'No view selected jet.');
     }
+    Object.defineProperty(JobsBasicViewComponent.prototype, "listFilter", {
+        get: function () {
+            return this._listFilter;
+        },
+        set: function (value) {
+            this._listFilter = value;
+            this.filteredJobsModel = this.listFilter ? this.performFilter(this.listFilter) : this.jobsModel;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    JobsBasicViewComponent.prototype.performFilter = function (filterBy) {
+        filterBy = filterBy.toLocaleLowerCase();
+        return this.jobsModel.filter(function (job) {
+            return job.name.toLocaleLowerCase().indexOf(filterBy) !== -1;
+        });
+    };
     /**
      * Initializes the component. Load the initial configuration
      */
@@ -1022,7 +1041,10 @@ var JobsBasicViewComponent = (function () {
      */
     JobsBasicViewComponent.prototype.initLoadJobsStatus = function (url) {
         var _this = this;
-        this.jenkinsService.getJobsStatus(url).subscribe(function (jobsModelAux) { return _this.jobsModel = jobsModelAux; }, function (error) { return console.log('Error retriving data'); });
+        this.jenkinsService.getJobsStatus(url).subscribe(function (jobsModelAux) {
+            _this.jobsModel = jobsModelAux,
+                _this.filteredJobsModel = _this.listFilter ? _this.performFilter(_this.listFilter) : _this.jobsModel;
+        }, function (error) { return console.log('Error retriving data'); });
         /* Starts the polling configuration */
         if (this.subscription !== undefined) {
             this.subscription.unsubscribe();
@@ -1030,7 +1052,10 @@ var JobsBasicViewComponent = (function () {
         this.timer = __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__["a" /* Observable */].interval(this.viewConfig.pollingIntervalInMilSecond);
         this.subscription = this.timer
             .subscribe(function () {
-            _this.jenkinsService.getJobsStatus(url).subscribe(function (jobsModelAux) { return _this.jobsModel = jobsModelAux; }, function (error) { return console.log('Error retriving data'); });
+            _this.jenkinsService.getJobsStatus(url).subscribe(function (jobsModelAux) {
+                _this.jobsModel = jobsModelAux,
+                    _this.filteredJobsModel = _this.listFilter ? _this.performFilter(_this.listFilter) : _this.jobsModel;
+            }, function (error) { return console.log('Error retriving data'); });
         });
         /* Ends the polling configuration */
     };
